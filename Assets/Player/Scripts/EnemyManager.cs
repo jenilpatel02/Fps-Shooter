@@ -10,15 +10,8 @@ public class EnemyManager : MonoBehaviour
     public GameObject player;
     public Animator enemyAnimator;
     public float health = 100f;
-    public float damage = 20f;
-    public screenchanger gamesetting;
-    public Spawner spawner; 
-
-
-    public bool playerInReach;
-    private float attackDelayTimer;
-    public float attackAnimStartDelay;
-    public float delayBetweenAttacks;
+    public float deducthealth = 20f;
+  
 
     public AudioSource audioSource;
     public AudioClip[] enemysound;
@@ -31,19 +24,19 @@ public class EnemyManager : MonoBehaviour
 
     }
     // Destroy Enemy
-/*    public void damage(float damage)
+    public void damage(float damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             enemyAnimator.SetTrigger("isDead");
             goondead();
         }
-    }*//*
+    }
     void goondead()
     {
         Destroy(gameObject);
-    }*/
+    }
 
     // Update is called once per frame
     void Update()
@@ -54,7 +47,6 @@ public class EnemyManager : MonoBehaviour
             audioSource.Play();
         }
 
-
         GetComponent<NavMeshAgent>().destination = player.transform.position;
         if (GetComponent<NavMeshAgent>().velocity.magnitude > 1)
         {
@@ -63,20 +55,19 @@ public class EnemyManager : MonoBehaviour
         else
         {
             enemyAnimator.SetBool("isRunning", false);
-            enemyAnimator.SetTrigger("isAttacking");
-
+         
         }
     }
 
 
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject == player)
-        {
-            playerInReach = true;
-        }
-    }
+    /*   
+       private void OnCollisionEnter(Collision collision)
+       {
+           if (collision.gameObject == player)
+           {
+               playerInReach = true;
+           }
+       }*/
     public void Hit(float damage)
     {
         health -= damage;
@@ -89,8 +80,8 @@ public class EnemyManager : MonoBehaviour
             Destroy(GetComponent<CapsuleCollider>());
         }
     }
-
-    private void OnCollisionStay(Collision collision)
+}
+  /*  private void OnCollisionStay(Collision collision)
     {
         if (playerInReach)
         {
@@ -109,3 +100,4 @@ public class EnemyManager : MonoBehaviour
         }
     }
 }
+*/

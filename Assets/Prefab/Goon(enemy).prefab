@@ -733,18 +733,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b731aa458e8795b42b748bb5f719c5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 919132149155446097, guid: 8710cbd1ecb465a4db673e55bee6324d, type: 3}
+  player: {fileID: 6739340218733118793, guid: 2cfed624879161149848abd0bf3db19b, type: 3}
   enemyAnimator: {fileID: 2375483719174156903}
   health: 100
-  gamesetting: {fileID: 0}
-  playerInReach: 0
-  attackAnimStartDelay: 0
-  delayBetweenAttacks: 0
+  deducthealth: 20
   audioSource: {fileID: 2375483719345064095}
-  zombieSounds:
-  - {fileID: 8300000, guid: cc5e7102d1645ff418450d00e5781e6e, type: 3}
-  - {fileID: 8300000, guid: 6fefcf8cc174c6d469b531a9ffd307b7, type: 3}
-  - {fileID: 8300000, guid: b2bf632004c5edb4e8ce1ede166e5d78, type: 3}
+  enemysound: []
 --- !u!195 &2375483719345064094
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -755,11 +749,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 5.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 99
   m_AngularSpeed: 240
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

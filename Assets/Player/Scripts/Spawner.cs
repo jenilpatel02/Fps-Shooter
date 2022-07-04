@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] spawners;
     public GameObject goon;
-    
+
     public float timeBetweenEnmySpawn;
 
     // Start is called before the first frame update

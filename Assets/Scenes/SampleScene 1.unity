@@ -1945,7 +1945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &993127827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2070,10 +2070,6 @@ MonoBehaviour:
   - {fileID: 1032862047}
   - {fileID: 531823450}
   goon: {fileID: 3185733832650050973, guid: 1a3dd0e142d8edc49965eb0012552178, type: 3}
-  currentlevel: {fileID: 0}
-  levelpassed: {fileID: 0}
-  alivegoon: 0
-  level: 0
   timeBetweenEnmySpawn: 0
 --- !u!4 &1070909989
 Transform:
@@ -2374,7 +2370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1524113332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2482,7 +2478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20866
+  m_Name: pb_Mesh17770
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3123,8 +3119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthNum: {fileID: 0}
-  screenManager: {fileID: 0}
+  healthNum: {fileID: 1736927694}
+  screenManager: {fileID: 666245832}
   playerCamera: {fileID: 8226131200587263921}
   hurtPanel: {fileID: 2111225151338904427}
 --- !u!198 &774534904754633995
