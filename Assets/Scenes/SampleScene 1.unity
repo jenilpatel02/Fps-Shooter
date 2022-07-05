@@ -2005,6 +2005,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993127826}
   m_CullTransparentMesh: 1
+--- !u!1 &1015188875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 8eaaa4f553116f44b8459bc24201c514, type: 3}
+  m_PrefabInstance: {fileID: 511461827}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015188876}
+  m_Layer: 0
+  m_Name: 'WFX_MF FPS RIFLE3 (Missing Prefab with guid: 8eaaa4f553116f44b8459bc24201c514)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015188876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 8eaaa4f553116f44b8459bc24201c514, type: 3}
+  m_PrefabInstance: {fileID: 511461827}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015188875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 222590387}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1032862047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +2923,7 @@ MonoBehaviour:
   damage: 100
   playerAnimator: {fileID: 3926694192071190148}
   muzzleFlash: {fileID: 1180975828}
-  hitParticles: {fileID: 100002, guid: d39ab699aa314a147969fd483aa55205, type: 3}
+  hitParticles: {fileID: 100002, guid: e986f27c5864a66458591dc7c9de54b4, type: 3}
   gunShot: {fileID: 8300000, guid: 289880d24aa7105418a186797707cc49, type: 3}
   audioSource: {fileID: 1731608694}
 --- !u!1 &1736927692
