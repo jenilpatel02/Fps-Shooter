@@ -567,11 +567,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2845659952540587815}
-  - component: {fileID: 2375483719345064093}
   - component: {fileID: 2375483719345064090}
   - component: {fileID: 2375483719345064095}
   - component: {fileID: 2375483719345064092}
   - component: {fileID: -8271478470029335603}
+  - component: {fileID: -5665380786762186587}
   m_Layer: 0
   m_Name: Goon(enemy)
   m_TagString: Enemy
@@ -595,22 +595,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2375483719345064093
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3185733832650050973}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &2375483719345064090
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -621,10 +605,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3.7070878
+  m_Radius: 1.2262473
+  m_Height: 3.8588398
   m_Direction: 1
-  m_Center: {x: 0, y: 1.8276829, z: 0}
+  m_Center: {x: -0.07117946, y: 1.9035585, z: -0.024592098}
 --- !u!82 &2375483719345064095
 AudioSource:
   m_ObjectHideFlags: 0
@@ -645,7 +629,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 4.1402345
+  MinDistance: 4.280829
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -737,10 +721,11 @@ MonoBehaviour:
   enemyAnimator: {fileID: 2375483719174156903}
   health: 100
   deducthealth: 20
-  navigation: {fileID: 0}
-  goon: {fileID: 0}
   audioSource: {fileID: 2375483719345064095}
   enemysound: []
+  playerInReach: 0
+  attackAnimStartDelay: 0.5
+  delayBetweenAttacks: 1
 --- !u!195 &-8271478470029335603
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -751,11 +736,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 240
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -763,6 +748,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &-5665380786762186587
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3185733832650050973}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3461344434888801625
 GameObject:
   m_ObjectHideFlags: 0

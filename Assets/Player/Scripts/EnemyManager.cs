@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -11,39 +12,34 @@ public class EnemyManager : MonoBehaviour
     public Animator enemyAnimator;
     public float health = 100f;
     public float deducthealth = 20f;
-    public NavMeshAgent navigation;
-    public GameObject goon;
     public AudioSource audioSource;
     public AudioClip[] enemysound;
 
+   
+    
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
-        navigation = GetComponent<NavMeshAgent>();
 
-      
     }
-
-    
-    
-  
-
     // Update is called once per frame
     void Update()
     {
-        //run towards player
         GetComponent<NavMeshAgent>().destination = player.transform.position;
-
         //enemy running animation
-        if (GetComponent<NavMeshAgent>().velocity.magnitude > 1)
+        if (GetComponent<NavMeshAgent>().velocity.magnitude > 3)
         {
             enemyAnimator.SetBool("isRunning", true);
+            enemyAnimator.SetBool("isAttacking", false);
         }
         else
         {
             enemyAnimator.SetBool("isRunning", false);
+            enemyAnimator.SetBool("isAttacking", true);
+            player.GetComponent<PlayerManager>().DeductHealth(5);
+  
         }
 
         if (!audioSource.isPlaying)
@@ -58,10 +54,13 @@ public class EnemyManager : MonoBehaviour
         if (health <= 0)
         {
             enemyAnimator.SetTrigger("isDead");
-            Destroy(gameObject, 10f);
+            Destroy(gameObject, 5f);
             Destroy(GetComponent<NavMeshAgent>());
             Destroy(GetComponent<EnemyManager>());
             Destroy(GetComponent<CapsuleCollider>());
         }
     }
+    
 }
+
+   

@@ -13,8 +13,8 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeBetweenEnmySpawn = 5;
-        spawners = new GameObject[5];
+        timeBetweenEnmySpawn = 1;
+        spawners = new GameObject[1];
         for (int i = 0; i < spawners.Length; i++)
         {
             spawners[i]=transform.GetChild(i).gameObject;
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
         if(timeBetweenEnmySpawn<=0)
         {
             spawnenenemy();
-            timeBetweenEnmySpawn = 1;
+            timeBetweenEnmySpawn = 6;
         }
         
     }
