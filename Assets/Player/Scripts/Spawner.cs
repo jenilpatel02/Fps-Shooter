@@ -29,7 +29,6 @@ public class Spawner : MonoBehaviour
             timeBetweenEnmySpawn = 1;
         }
         
-       
     }
     void spawnenenemy()
     { 

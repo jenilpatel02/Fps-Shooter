@@ -11,8 +11,8 @@ public class EnemyManager : MonoBehaviour
     public Animator enemyAnimator;
     public float health = 100f;
     public float deducthealth = 20f;
-  
-
+    public NavMeshAgent navigation;
+    public GameObject goon;
     public AudioSource audioSource;
     public AudioClip[] enemysound;
 
@@ -21,33 +21,22 @@ public class EnemyManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
+        navigation = GetComponent<NavMeshAgent>();
 
+      
     }
-    // Destroy Enemy
-    public void damage(float damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            enemyAnimator.SetTrigger("isDead");
-            goondead();
-        }
-    }
-    void goondead()
-    {
-        Destroy(gameObject);
-    }
+
+    
+    
+  
 
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying)
-        {
-            audioSource.clip = enemysound[Random.Range(0, enemysound.Length)];
-            audioSource.Play();
-        }
-
+        //run towards player
         GetComponent<NavMeshAgent>().destination = player.transform.position;
+
+        //enemy running animation
         if (GetComponent<NavMeshAgent>().velocity.magnitude > 1)
         {
             enemyAnimator.SetBool("isRunning", true);
@@ -55,19 +44,14 @@ public class EnemyManager : MonoBehaviour
         else
         {
             enemyAnimator.SetBool("isRunning", false);
-         
+        }
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = enemysound[Random.Range(0, enemysound.Length)];
+            audioSource.Play();
         }
     }
-
-
-    /*   
-       private void OnCollisionEnter(Collision collision)
-       {
-           if (collision.gameObject == player)
-           {
-               playerInReach = true;
-           }
-       }*/
     public void Hit(float damage)
     {
         health -= damage;
@@ -81,23 +65,3 @@ public class EnemyManager : MonoBehaviour
         }
     }
 }
-  /*  private void OnCollisionStay(Collision collision)
-    {
-        if (playerInReach)
-        {
-            attackDelayTimer += Time.deltaTime;
-        }
-
-        if (attackDelayTimer >= delayBetweenAttacks - attackAnimStartDelay && attackDelayTimer <= delayBetweenAttacks && playerInReach)
-        {
-            enemyAnimator.SetTrigger("isAttacking");
-        }
-
-        if (attackDelayTimer >= delayBetweenAttacks && playerInReach)
-        {
-            player.GetComponent<PlayerManager>().Hit(health);
-            attackDelayTimer = 0;
-        }
-    }
-}
-*/

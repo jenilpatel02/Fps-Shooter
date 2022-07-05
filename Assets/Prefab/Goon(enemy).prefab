@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 2375483719345064090}
   - component: {fileID: 2375483719345064095}
   - component: {fileID: 2375483719345064092}
-  - component: {fileID: 2375483719345064094}
+  - component: {fileID: -8271478470029335603}
   m_Layer: 0
   m_Name: Goon(enemy)
   m_TagString: Enemy
@@ -733,13 +733,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b731aa458e8795b42b748bb5f719c5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6739340218733118793, guid: 2cfed624879161149848abd0bf3db19b, type: 3}
+  player: {fileID: 8055087989078445491, guid: d379bdceff9aab446b67e154dd212ace, type: 3}
   enemyAnimator: {fileID: 2375483719174156903}
   health: 100
   deducthealth: 20
+  navigation: {fileID: 0}
+  goon: {fileID: 0}
   audioSource: {fileID: 2375483719345064095}
   enemysound: []
---- !u!195 &2375483719345064094
+--- !u!195 &-8271478470029335603
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -748,16 +750,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 3185733832650050973}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 99
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 50
+  avoidancePriority: 50
   m_AngularSpeed: 240
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 3.8
+  m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1833,7 +1835,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: cfdbf68168dc45d4caebf1024487fdbb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
